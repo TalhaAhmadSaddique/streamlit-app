@@ -186,8 +186,8 @@ def scrape_upwork_jobs(username, password, search_query):
 if __name__ == "__main__":
     try:
         # Example usage:
-        username = "Khurram@musketeerstech.com"
-        password = "Khurram321$$$Upwork"
+        username = ""
+        password = ""
         search_query = "python developer"
         jobs = scrape_upwork_jobs(username, password, search_query)
         print(jobs)
