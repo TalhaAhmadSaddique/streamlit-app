@@ -35,7 +35,6 @@ def install_chrome():
     elif system == "linux":
         print("Installing Chrome for Linux...")
         commands = [
-            ["apt", "update"],
             ["apt-get", "install", "-y", "sudo"],
             ["sudo", "apt-get", "update"],
             ["sudo", "apt-get", "install", "-y", "wget", "unzip"],
