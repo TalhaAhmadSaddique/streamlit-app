@@ -45,26 +45,20 @@ def install_chrome():
         ]
         # for cmd in commands:
         #     subprocess.run(cmd, shell=True, check=True)
-        # Install sudo if not installed
-        subprocess.run(["apt-get", "install", "-y", "sudo"], shell=True, check=True)
-
-        # Update the package list
-        subprocess.run(["sudo", "apt-get", "update"], shell=True, check=True)
-
-        # Install wget and unzip
-        subprocess.run(["sudo", "apt-get", "install", "-y", "wget", "unzip"], shell=True, check=True)
-
-        # Download Google Chrome
-        subprocess.run(["wget", "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"], shell=True, check=True)
-
-        # Install Google Chrome
-        subprocess.run(["sudo", "apt", "install", "-y", "./google-chrome-stable_current_amd64.deb"], shell=True, check=True)
-
-        # Remove the downloaded .deb file
-        subprocess.run(["rm", "google-chrome-stable_current_amd64.deb"], shell=True, check=True)
-
-        # Clean up
-        subprocess.run(["sudo", "apt-get", "clean"], shell=True, check=True)
+        os.system("""apt update && apt-get install -y sudo && \
+                  sudo apt-get install -y wget unzip && \
+                  wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && \
+                  apt install -y ./google-chrome-stable_current_amd64.deb && \
+                  rm google-chrome-stable_current_amd64.deb && \
+                  apt-get clean
+        """)
+        # os.system("""apt update && apt-get install -y sudo""")
+        # os.system("""sudo apt-get update""")
+        # os.system("""sudo apt-get install -y wget unzip""")
+        # os.system("""wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb""")
+        # os.system("""sudo apt-get update""")
+        # os.system("""sudo apt-get update""")
+        # os.system("""sudo apt-get update""")
     else:
         print(f"Unsupported operating system: {system}")
         return
