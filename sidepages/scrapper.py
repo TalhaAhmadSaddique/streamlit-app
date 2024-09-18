@@ -43,7 +43,7 @@ def install_chrome():
             "apt-get clean"
         ]
         for cmd in commands:
-            subprocess.run(cmd, shell=True, check=True)
+            subprocess.run(cmd, check=True)
     else:
         print(f"Unsupported operating system: {system}")
         return
