@@ -1,0 +1,8 @@
+streamlit==1.38.0
+streamlit-extras
+setuptools
+selenium==4.24.0
+undetected-chromedriver==3.5.5
+openai==1.46.0
+webdriver_manager
+
