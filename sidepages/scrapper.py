@@ -35,13 +35,14 @@ def install_chrome():
     elif system == "linux":
         print("Installing Chrome for Linux...")
         commands = [
-            "apt update && apt-get install -y sudo",
-            "sudo apt-get update",
-            "apt-get install -y wget unzip",
-            "wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb",
-            "apt install -y ./google-chrome-stable_current_amd64.deb",
-            "rm google-chrome-stable_current_amd64.deb",
-            "apt-get clean"
+            ["apt", "update"],
+            ["apt-get", "install", "-y", "sudo"],
+            ["sudo", "apt-get", "update"],
+            ["sudo", "apt-get", "install", "-y", "wget", "unzip"],
+            ["wget", "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"],
+            ["sudo", "apt", "install", "-y", "./google-chrome-stable_current_amd64.deb"],
+            ["rm", "google-chrome-stable_current_amd64.deb"],
+            ["sudo", "apt-get", "clean"]
         ]
         for cmd in commands:
             subprocess.run(cmd, check=True)
