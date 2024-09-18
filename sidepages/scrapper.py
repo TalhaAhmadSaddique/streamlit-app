@@ -35,7 +35,8 @@ def install_chrome():
     elif system == "linux":
         print("Installing Chrome for Linux...")
         commands = [
-            "apt-get update",
+            "apt update && apt-get install -y sudo",
+            "sudo apt-get update",
             "apt-get install -y wget unzip",
             "wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb",
             "apt install -y ./google-chrome-stable_current_amd64.deb",
